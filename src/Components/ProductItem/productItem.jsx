@@ -1,9 +1,9 @@
 import { HiShoppingCart } from 'react-icons/hi'
 import "./productItem.css"
 
-const ProductItem = ({ name, price, ingredients, imageUrl }) => {
+const ProductItem = ({ name, price, ingredients, imageUrl , delay }) => {
     return (
-        <div className="card product-card h-100 border-0 shadow-sm pb-1">
+        <div className="card product-card h-100 border-0 shadow-sm pb-1 fade-in-horize" style={{ animationDelay:delay + "s" }}>
             <span className="badge badge-end badge-shadow bg-success fs-md fw-medium">
                 فیمت : {price.toLocaleString()} تومان
             </span>
