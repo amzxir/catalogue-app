@@ -12,10 +12,11 @@ const CategoryList = ({ filterProduct, children }) => {
         setIsLoading(true)
         const handlerFetchData = async () => {
             try {
-                const response = await axios.get('/FoodCategory/categories' , {    headers: {
-                    "Cache-Control": "no-cache",
-                    "Content-Type": "application/x-www-form-urlencoded",
-                  },});
+                const response = await axios.get('/FoodCategory/categories' , {
+                    headers: {
+                        "Access-Control-Allow-Origin": "*"
+                      }
+                });
                 setCategory(response.data);
                 setIsLoading(false)
             } catch (error) {
