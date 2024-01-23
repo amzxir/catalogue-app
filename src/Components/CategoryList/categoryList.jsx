@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import axios from "../../axios";
 import Loading from "../Loading/loading";
+import axios from "axios";
+
 
 
 const CategoryList = ({ filterProduct, children }) => {
@@ -12,10 +13,11 @@ const CategoryList = ({ filterProduct, children }) => {
         setIsLoading(true)
         const handlerFetchData = async () => {
             try {
-                const response = await axios.get('/FoodCategory/categories' , {
+                const response = await axios.get('https://react-mini-projects-api.classbon.com/FoodCategory/categories' , {
                     headers: {
-                        "Access-Control-Allow-Origin": "*"
-                      }
+                        'Access-Control-Allow-Origin': '*',
+                        'Access-Control-Allow-Headers': '*',
+                      },
                 });
                 setCategory(response.data);
                 setIsLoading(false)
