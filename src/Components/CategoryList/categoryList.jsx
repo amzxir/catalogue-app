@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
+import axios from "../../axios";
 import Loading from "../Loading/loading";
-import axios from "axios";
-
 
 
 const CategoryList = ({ filterProduct, children }) => {
@@ -13,7 +12,7 @@ const CategoryList = ({ filterProduct, children }) => {
         setIsLoading(true)
         const handlerFetchData = async () => {
             try {
-                const response = await axios.get('/api/FoodCategory/categories');
+                const response = await axios.get('/FoodCategory/categories');
                 setCategory(response.data);
                 setIsLoading(false)
             } catch (error) {
