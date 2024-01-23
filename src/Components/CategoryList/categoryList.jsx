@@ -12,7 +12,9 @@ const CategoryList = ({ filterProduct, children }) => {
         setIsLoading(true)
         const handlerFetchData = async () => {
             try {
-                const response = await axios.get('/FoodCategory/categories');
+                const response = await axios.get('/FoodCategory/categories' , {
+                    withCredentials: true,
+                });
                 setCategory(response.data);
                 setIsLoading(false)
             } catch (error) {
