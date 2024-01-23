@@ -11,16 +11,19 @@ const CategoryList = ({ filterProduct, children }) => {
     useEffect(() => {
         setIsLoading(true)
         const handlerFetchData = async () => {
-            const config = {
-                headers: { "Access-Control-Allow-Origin": "*" }
-            }
-            try {
-                const response = await axios.get('/FoodCategory/categories' , config);
-                setCategory(response.data);
-                setIsLoading(false)
-            } catch (error) {
-                console.error(error);
-            }
+            const response = await axios.get('/FoodCategory/categories');
+            setCategory(response.data);
+            setIsLoading(false)
+            // const config = {
+            //     headers: { "Access-Control-Allow-Origin": "*" }
+            // }
+            // try {
+            //     const response = await axios.get('/FoodCategory/categories' , config);
+            //     setCategory(response.data);
+            //     setIsLoading(false)
+            // } catch (error) {
+            //     console.error(error);
+            // }
         }
 
         handlerFetchData();
