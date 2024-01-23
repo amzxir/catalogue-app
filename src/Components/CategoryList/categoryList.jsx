@@ -11,13 +11,6 @@ const CategoryList = ({ filterProduct, children }) => {
     useEffect(() => {
         setIsLoading(true)
         const handlerFetchData = async () => {
-            const config = {
-                headers : {
-                    "Access-Control-Allow-Headers": "*",
-                    "Access-Control-Allow-Origin": "*",
-                    "Access-Control-Allow-Methods": "*"      
-                }
-            }
             try {
                 const response = await axios.get('/FoodCategory/categories' , config);
                 setCategory(response.data);
