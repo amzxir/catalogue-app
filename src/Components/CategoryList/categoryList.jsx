@@ -19,7 +19,7 @@ const CategoryList = ({ filterProduct, children }) => {
                 }, 
             }
             try {
-                const response = await axios.get('/FoodCategory/categories');
+                const response = await axios.get('/FoodCategory/categories' , config);
                 setCategory(response.data);
                 setIsLoading(false)
             } catch (error) {
