@@ -13,8 +13,7 @@ const CategoryList = ({ filterProduct, children }) => {
         const handlerFetchData = async () => {
             const config = {
                 headers: {
-                    "Content-Type": "application/json",
-                    "Access-Control-Allow-Origin": "https://amzxir.github.io",
+                    "Access-Control-Allow-Origin": "*",
                     "Access-Control-Allow-Headers": "Origin, Content-Type, X-Auth-Token, Authorization, Accept,charset,boundary,Content-Length"
                 }, 
             }
