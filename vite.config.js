@@ -7,6 +7,8 @@ export default defineConfig({
     proxy: {
       '/api': {
         target: 'https://react-mini-projects-api.classbon.com',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ''),
       },
     },
   },
